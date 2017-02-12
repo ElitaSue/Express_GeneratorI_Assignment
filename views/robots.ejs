@@ -1,0 +1,53 @@
+<html>
+<head>
+  <% include ./partials/head %>
+</head>
+<body>
+  <% include ./partials/navbar %>
+  <div class="container">
+      <div class="robots"></div>
+      <div class="row">
+        <div class="col m3">
+          <div style="background-image: url(/images/robot1.jpg); width: 150px; height: 187px; border: 1px solid black;"></div>
+          <h6 class="center">Frank</h6>
+          <div style="background-image: url(/images/robot2.jpg); width: 150px; height: 187px; border: 1px solid black;"></div>
+          <h6 class="center">Ted</h6>
+          <div style="background-image: url(/images/robot3.jpg); width: 150px; height: 187px; border: 1px solid black;"></div>
+          <h6 class="center">Donna</h6>
+          <div style="background-image: url(/images/robot4.jpg); width: 150px; height: 187px; border: 1px solid black;"></div>
+          <h6 class="center">Liz</h6>
+      </div>
+
+
+      <div>
+        <div class="input-field col m6">
+          <form action="/robots" method="post">
+            <input name="name" placeholder="Robot Name" />
+            </div>
+            <div class="input-field col m3">
+              <button class="btn deep-orange">Add Robot</button>
+            </div>
+        </form>
+
+          <table class="col m9">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>X</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% robots.forEach( function(robot) { %>
+              <% var url='/robots/delete/' + robot.replace(/ /g, '%20') %>
+              <tr>
+                <td> <%= robot %> </td>
+                <td><a href=<%= url %> >Delete</a></td>
+              </tr>
+              <% }); %>
+            </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

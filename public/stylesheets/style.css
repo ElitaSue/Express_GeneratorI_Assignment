@@ -1,0 +1,22 @@
+@import 'materialize.min.css';
+
+body {
+  font-size: 20px;
+}
+
+.nav-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  float: none;
+}
+
+.container{
+  max-width: 900px;
+  margin: 0 auto;
+  float: none;
+}
+
+.robots {
+  background-image: url(/images/history-of-robots1.jpg); height: 393px; width: 900px; border: 1px solid black;
+  margin-bottom: 30px;
+}
